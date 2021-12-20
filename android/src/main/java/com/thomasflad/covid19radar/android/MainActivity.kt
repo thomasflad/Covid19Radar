@@ -1,20 +1,39 @@
 package com.thomasflad.covid19radar.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.thomasflad.covid19radar.Greeting
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import com.thomasflad.covid19radar.android.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import org.koin.android.scope.AndroidScopeComponent
+import org.koin.androidx.scope.activityScope
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.scope.Scope
 
-fun greet(): String {
-    return Greeting().greeting()
-}
+class MainActivity : AppCompatActivity(), AndroidScopeComponent {
 
-class MainActivity : AppCompatActivity() {
+    override val scope: Scope by activityScope()
+    private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainActivityViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.lifecycleOwner = this
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.cases.collectLatest {
+                        binding.cases = it.toString()
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,18 @@
+CREATE TABLE GermanyEntity (
+    id INTEGER AS Int PRIMARY KEY NOT NULL DEFAULT 0,
+    cases REAL NOT NULL,
+    deaths REAL NOT NULL,
+    recovered REAL NOT NULL,
+    weekIncidence REAL NOT NULL,
+    casesPerWeek REAL NOT NULL,
+    casesPer100k REAL NOT NULL
+);
+
+select:
+SELECT *
+FROM GermanyEntity
+WHERE id = 0;
+
+insertOrReplace:
+INSERT OR REPLACE INTO GermanyEntity
+VALUES ?;

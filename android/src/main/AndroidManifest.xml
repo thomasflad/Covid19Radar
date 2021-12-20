@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.thomasflad.covid19radar.android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".Covid19RadarApp"
+        android:label="@string/app_name"
         android:allowBackup="false"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"

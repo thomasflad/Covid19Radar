@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KMPNativeCoroutines",
+        "repositoryURL": "https://github.com/rickclephas/KMP-NativeCoroutines",
+        "state": {
+          "branch": "spm/combine",
+          "revision": "78ad4a38854b7b2fd6ba6fd9138d90c4796879c0",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
