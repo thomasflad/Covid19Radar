@@ -6,10 +6,10 @@
     }
     @Suppress("GradlePluginVersion")
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
-        classpath("com.android.tools.build:gradle:_")
+        classpath(Dependencies.Gradle.kotlin)
+        classpath(Dependencies.Gradle.android)
+        classpath(Dependencies.Gradle.kmpNativeCoroutines)
         classpath(Square.SqlDelight.gradlePlugin)
-        classpath("com.rickclephas.kmp:kmp-nativecoroutines-gradle-plugin:_")
     }
 }
 

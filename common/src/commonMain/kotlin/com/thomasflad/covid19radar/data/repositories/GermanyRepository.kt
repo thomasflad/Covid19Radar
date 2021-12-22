@@ -1,5 +1,6 @@
 package com.thomasflad.covid19radar.data.repositories
 
+import co.touchlab.kermit.Logger
 import com.thomasflad.covid19radar.data.localDataSource.IGermanyLocalDataSource
 import com.thomasflad.covid19radar.data.remoteDataSource.IGermanyRemoteDataSource
 import com.thomasflad.covid19radar.domain.cachedNetworkFlow
@@ -14,6 +15,6 @@ internal class GermanyRepository(
         fetchFromRemote = { remoteDataSource.fetchGermany() },
         saveRemoteData = { localDataSource.storeGermany(it) },
         needsRefresh = { true },
-        onException = { print(it) }
+        onException = { Logger.w(it) { "Error on GetGermany" } }
     )
 }

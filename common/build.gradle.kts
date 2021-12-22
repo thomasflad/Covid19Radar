@@ -19,6 +19,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(Kotlin.stdlib)
                 implementation(Koin.core)
                 implementation(KotlinX.Coroutines.core)
                 implementation(Square.SqlDelight.coroutinesExtensions)
@@ -28,6 +29,7 @@ kotlin {
                 implementation(Ktor.client.logging)
                 implementation(Touchlab.stately.common)
                 implementation(Touchlab.stately.concurrency)
+                implementation(Dependencies.kermit)
             }
         }
 
