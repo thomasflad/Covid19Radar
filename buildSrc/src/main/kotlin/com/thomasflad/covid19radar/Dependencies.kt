@@ -15,6 +15,7 @@ object Dependencies {
         const val android = "com.android.tools.build:gradle:_"
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:_"
         const val kmpNativeCoroutines = "com.rickclephas.kmp:kmp-nativecoroutines-gradle-plugin:_"
+        const val ktlint = "org.jlleitschuh.gradle:ktlint-gradle:_"
     }
 
     const val kermit = "co.touchlab:kermit:_"

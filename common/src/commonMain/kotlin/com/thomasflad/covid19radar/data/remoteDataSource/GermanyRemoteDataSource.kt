@@ -1,8 +1,8 @@
 package com.thomasflad.covid19radar.data.remoteDataSource
 
-import com.thomasflad.covid19radar.domain.Germany
 import com.thomasflad.covid19radar.data.network.IGermanyClient
 import com.thomasflad.covid19radar.data.network.toDomain
+import com.thomasflad.covid19radar.domain.Germany
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

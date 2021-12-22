@@ -8,6 +8,7 @@
     dependencies {
         classpath(Dependencies.Gradle.kotlin)
         classpath(Dependencies.Gradle.android)
+        classpath(Dependencies.Gradle.ktlint)
         classpath(Dependencies.Gradle.kmpNativeCoroutines)
         classpath(Square.SqlDelight.gradlePlugin)
     }

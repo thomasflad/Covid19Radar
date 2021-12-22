@@ -2,13 +2,14 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("com.android.library")
+    id("org.jlleitschuh.gradle.ktlint")
     id("com.squareup.sqldelight")
     id("com.rickclephas.kmp.nativecoroutines")
 }
 
 kotlin {
     android()
-    
+
     listOf(iosX64(), iosArm64()).forEach {
         it.binaries.framework {
             baseName = "common"

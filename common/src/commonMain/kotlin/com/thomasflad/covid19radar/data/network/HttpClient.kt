@@ -32,5 +32,4 @@ fun createHttpClient(clientEngine: HttpClientEngine) = HttpClient(clientEngine) 
         logger = Logger.DEFAULT
         level = LogLevel.INFO
     }
-
 }

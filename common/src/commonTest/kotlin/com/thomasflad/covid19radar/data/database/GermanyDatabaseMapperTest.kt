@@ -31,7 +31,5 @@ class GermanyDatabaseMapperTest {
         )
 
         assertEquals(expected, actual)
-
     }
-
 }

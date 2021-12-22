@@ -21,4 +21,3 @@ internal fun Germany.toDatabase() = GermanyEntity(
     casesPerWeek = casesPerWeek,
     casesPer100k = casesPer100k
 )
-

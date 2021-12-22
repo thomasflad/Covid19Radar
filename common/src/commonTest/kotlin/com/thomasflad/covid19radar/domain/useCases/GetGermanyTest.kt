@@ -42,5 +42,4 @@ class GetGermanyTest : KoinTest {
             assertEquals(entity.toDomain(), awaitItem())
         }
     }
-
 }

@@ -9,7 +9,7 @@ import com.thomasflad.covid19radar.domain.interfaces.IGermanyRepository
 internal class GermanyRepository(
     private val localDataSource: IGermanyLocalDataSource,
     private val remoteDataSource: IGermanyRemoteDataSource
-): IGermanyRepository {
+) : IGermanyRepository {
     override fun getGermany() = cachedNetworkFlow(
         flowFromLocal = { localDataSource.getGermany() },
         fetchFromRemote = { remoteDataSource.fetchGermany() },
