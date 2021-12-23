@@ -11,19 +11,19 @@ import SwiftUI
 import Combine
 import KMPNativeCoroutinesCombine
 
-extension ContentView {
+extension Dashboard {
     class ViewModel: ObservableObject {
 
-        @Published private(set) var cases: String = "---"
+        @Published private(set) var weekIncidence = "---"
 
         init(getGermany: GetGermany = GetGermany()) {
 
             createPublisher(for: getGermany.dataFlowNative)
                 .receive(on: DispatchQueue.main)
                 .replaceError(with: DataState(status: .error, data: nil, message: nil))
-                .compactMap { $0.data?.cases }
-                .map { "\($0)" }
-                .assign(to: &$cases)
+                .compactMap { $0.data?.weekIncidence }
+                .map { "\($0.formatted(.number.precision(.fractionLength(2))))" }
+                .assign(to: &$weekIncidence)
 
         }
     }

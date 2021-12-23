@@ -10,7 +10,7 @@ struct Covid19RadarApp: App {
 
 	var body: some Scene {
 		WindowGroup {
-			ContentView()
+			AppContainer()
 		}
 	}
 }

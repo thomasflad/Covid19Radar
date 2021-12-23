@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Covid19Radar
+
+  Created by Thomas Flad on 23.12.21.
+  Copyright © 2021 orgName. All rights reserved.
+*/
+
+"global_tab_dashboard" = "Dashboard";
+
+"dashboard_navigationbar_title" = "Dashboard";
+"dashboard_weekIncidents_title" = "7 days incidence";
+"dashboard_weekIncidents_germanywide" = "Germany-wide";
+
