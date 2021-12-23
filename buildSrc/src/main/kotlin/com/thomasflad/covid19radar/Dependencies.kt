@@ -19,5 +19,6 @@ object Dependencies {
     }
 
     const val kermit = "co.touchlab:kermit:_"
-
+    const val ktorContentNegotiation = "io.ktor:ktor-client-content-negotiation:_"
+    const val ktorKotlinxJson = "io.ktor:ktor-serialization-kotlinx-json:_"
 }

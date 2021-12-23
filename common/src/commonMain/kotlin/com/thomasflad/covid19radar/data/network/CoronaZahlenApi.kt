@@ -9,6 +9,6 @@ internal object CoronaZahlenApi {
     private const val SCHEME = "https"
     private const val HOST = "api.corona-zahlen.org"
     private const val PORT = "443"
-    const val ENDPOINT_URL = "$SCHEME://$HOST:$PORT"
-    const val GERMANY_PATH = "/germany"
+    private const val ENDPOINT_URL = "$SCHEME://$HOST:$PORT"
+    private const val GERMANY_PATH = "/germany"
 }

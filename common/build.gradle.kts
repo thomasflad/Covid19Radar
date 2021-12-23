@@ -24,10 +24,14 @@ kotlin {
                 implementation(Koin.core)
                 implementation(KotlinX.Coroutines.core)
                 implementation(Square.SqlDelight.coroutinesExtensions)
+
                 implementation(Ktor.client.core)
-                implementation(Ktor.client.json)
-                implementation(Ktor.client.serialization)
                 implementation(Ktor.client.logging)
+                implementation(Ktor.client.serialization)
+                implementation(Ktor.client.json)
+                implementation(Dependencies.ktorContentNegotiation)
+                implementation(Dependencies.ktorKotlinxJson)
+
                 implementation(Touchlab.stately.common)
                 implementation(Touchlab.stately.concurrency)
                 implementation(Dependencies.kermit)
