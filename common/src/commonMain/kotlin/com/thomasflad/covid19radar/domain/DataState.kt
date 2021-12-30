@@ -50,13 +50,14 @@ data class DataState<out T>(
     }
 }
 
-inline fun <T> cachedNetworkFlow(
-    crossinline flowFromLocal: () -> Flow<T?>,
-    crossinline fetchFromRemote: suspend () -> T,
-    crossinline saveRemoteData: suspend (T) -> Unit,
-    crossinline needsRefresh: (T?) -> Boolean = { false },
+inline fun <REMOTE, DATABASE, DOMAIN> cachedNetworkFlow(
+    crossinline flowFromLocal: () -> Flow<DATABASE?>,
+    crossinline fetchFromRemote: suspend () -> REMOTE,
+    crossinline saveRemoteData: suspend (REMOTE) -> Unit,
+    crossinline needsRefresh: (DATABASE?) -> Boolean = { false },
+    crossinline mapper: (DATABASE?) -> DOMAIN?,
     crossinline onException: (Throwable) -> Unit = {}
-) = flow<DataState<T>> {
+) = flow<DataState<DOMAIN>> {
 
     emit(DataState.loading())
 
@@ -65,13 +66,13 @@ inline fun <T> cachedNetworkFlow(
     flowFromLocal()
         .onStart {
             if (needsRefresh(currentValue)) {
-                emit(DataState.loading(currentValue))
+                emit(DataState.loading(mapper(currentValue)))
                 saveRemoteData(fetchFromRemote())
             }
         }
         .catch {
-            emit(DataState.error(currentValue, it.message))
+            emit(DataState.error(mapper(currentValue), it.message))
             onException(it)
         }
-        .collect { emit(DataState.success(it)) }
+        .collect { emit(DataState.success(mapper(it))) }
 }

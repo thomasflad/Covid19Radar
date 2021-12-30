@@ -1,14 +1,9 @@
-/* 
-  Localizable.strings
-  Covid19Radar
+"global.tab.dashboard" = "Dashboard";
 
-  Created by Thomas Flad on 23.12.21.
-  Copyright © 2021 orgName. All rights reserved.
-*/
+"dashboard.navigationbar.title" = "Germany";
 
-"global_tab_dashboard" = "Dashboard";
+"dashboard.weekIncidents.title" = "7 days incidence";
+"dashboard.weekIncidents.germanywide" = "Germany-wide";
 
-"dashboard_navigationbar_title" = "Dashboard";
-"dashboard_weekIncidents_title" = "7 days incidence";
-"dashboard_weekIncidents_germanywide" = "Germany-wide";
-
+"dashboard.hospitalization.title" = "Hospitalization\n7 days incidence";
+"dashboard.hospitalization.germanywide" = "Germany-wide";

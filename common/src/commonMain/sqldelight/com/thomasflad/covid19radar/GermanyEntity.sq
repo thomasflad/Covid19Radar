@@ -1,11 +1,20 @@
+import com.thomasflad.covid19radar.data.database.GermanyDeltaEntity;
+import com.thomasflad.covid19radar.data.database.GermanyHospitalizationEntity;
+import com.thomasflad.covid19radar.data.database.GermanyMetaEntity;
+import com.thomasflad.covid19radar.data.database.GermanyReproductionEntity;
+
 CREATE TABLE GermanyEntity (
     id INTEGER AS Int PRIMARY KEY NOT NULL DEFAULT 0,
-    cases REAL NOT NULL,
-    deaths REAL NOT NULL,
-    recovered REAL NOT NULL,
+    cases INTEGER AS Int NOT NULL,
+    deaths INTEGER AS Int NOT NULL,
+    recovered INTEGER AS Int NOT NULL,
     weekIncidence REAL NOT NULL,
-    casesPerWeek REAL NOT NULL,
-    casesPer100k REAL NOT NULL
+    casesPerWeek INTEGER AS Int NOT NULL,
+    casesPer100k REAL NOT NULL,
+    delta TEXT AS GermanyDeltaEntity NOT NULL,
+    reproduction TEXT AS GermanyReproductionEntity NOT NULL,
+    hospitalization TEXT AS GermanyHospitalizationEntity NOT NULL,
+    meta TEXT AS GermanyMetaEntity NOT NULL
 );
 
 select:

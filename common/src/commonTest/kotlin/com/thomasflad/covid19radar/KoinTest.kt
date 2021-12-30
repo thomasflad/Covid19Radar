@@ -2,7 +2,6 @@ package com.thomasflad.covid19radar
 
 import com.thomasflad.covid19radar.data.database.IGermanyDao
 import com.thomasflad.covid19radar.di.clientModule
-import com.thomasflad.covid19radar.di.localDataSourceModule
 import com.thomasflad.covid19radar.di.repositoryModule
 import com.thomasflad.covid19radar.testdoubles.FakeGermanyDao
 import com.thomasflad.covid19radar.testdoubles.MockClientHelper
@@ -25,8 +24,6 @@ fun initKoinTest(
         }
     )
     modules(clientModule)
-    modules(repositoryModule)
-    modules(localDataSourceModule)
     modules(repositoryModule)
     declaration()
 }

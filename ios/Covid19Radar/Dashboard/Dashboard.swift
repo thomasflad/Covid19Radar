@@ -1,11 +1,12 @@
+import Combine
 import common
 import SwiftUI
-import Combine
 
 struct Dashboard: View {
     @StateObject private var viewModel = ViewModel()
 
 	var body: some View {
-        ContentView(weekIncidence: viewModel.weekIncidence)
+        ContentView(weekIncidence: viewModel.weekIncidence,
+                    hospitalIncidence: viewModel.hospitalizationIncidence)
 	}
 }

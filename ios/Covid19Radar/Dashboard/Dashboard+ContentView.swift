@@ -1,58 +1,40 @@
-//
-//  Dashboard+ContentView.swift
-//  Covid19Radar
-//
-//  Created by Thomas Flad on 23.12.21.
-//  Copyright © 2021 orgName. All rights reserved.
-//
-
 import SwiftUI
+import UIKit
 
 extension Dashboard {
     struct ContentView: View {
 
         let weekIncidence: String
+        let hospitalIncidence: String
+
+        private let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
 
         var body: some View {
-            ZStack {
-                Color.accentColor
-                    .opacity(0.15)
-                    .ignoresSafeArea(.all, edges: .top)
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    DashboardTileView(title: "dashboard.weekIncidents.title",
+                                      subTitle: "dashboard.weekIncidents.germanywide",
+                                      value: weekIncidence)
 
-                HStack {
-                    VStack {
-                        VStack(alignment: .leading) {
-                            Text("dashboard_weekIncidents_title")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-
-                            Text("dashboard_weekIncidents_germanywide")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .padding(.bottom)
-
-                            Text(weekIncidence)
-                                .font(.title)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(.background)
-                        )
-                        Spacer()
-                    }
-                    Spacer()
+                    DashboardTileView(title: "dashboard.hospitalization.title",
+                                      subTitle: "dashboard.hospitalization.germanywide",
+                                      value: hospitalIncidence)
                 }
                 .padding()
             }
+            .background(Color.accentColor.opacity(0.15))
         }
     }
 }
 
 struct DashboardContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Dashboard.ContentView(weekIncidence: "123.45")
+        Dashboard.ContentView(
+            weekIncidence: "123.45",
+            hospitalIncidence: "123.45")
+        Dashboard.ContentView(
+            weekIncidence: "123.45",
+            hospitalIncidence: "123.45")
+            .preferredColorScheme(.dark)
     }
 }

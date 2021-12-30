@@ -6,5 +6,5 @@ import org.koin.core.component.get
 
 class GetGermany : KoinComponent {
     private val germanyRepository: IGermanyRepository = get()
-    val dataFlow = germanyRepository.getGermany()
+    fun dataFlow() = germanyRepository.getGermany()
 }

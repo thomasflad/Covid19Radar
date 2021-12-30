@@ -11,9 +11,12 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* Covid19RadarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* Covid19RadarApp.swift */; };
 		7555FF83242A565900829871 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* Dashboard.swift */; };
+		9F2F3BD5277DC841001413CA /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F3BD4277DC841001413CA /* Double+Extensions.swift */; };
 		9F81842A2774D0680052C8A5 /* Dashboard+ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8184292774D0680052C8A5 /* Dashboard+ContentView.swift */; };
 		9F8184372774D3660052C8A5 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8184362774D3660052C8A5 /* AppContainer.swift */; };
 		9F81843A2774FC630052C8A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F81843C2774FC630052C8A5 /* Localizable.strings */; };
+		9F818441277C98120052C8A5 /* DashboardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F818440277C98120052C8A5 /* DashboardTileView.swift */; };
+		9F8C5FA6277CA64400A47CB7 /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C5FA5277CA64400A47CB7 /* UITabBar+Extensions.swift */; };
 		9F8E8BD227731EEF00D771A4 /* KMPNativeCoroutinesCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8E8BD127731EEF00D771A4 /* KMPNativeCoroutinesCombine */; };
 		9F8E8BD427731EEF00D771A4 /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8E8BD327731EEF00D771A4 /* KMPNativeCoroutinesCore */; };
 		9FF562D72772241F005DCDA7 /* Dashboard+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF562D62772241F005DCDA7 /* Dashboard+ViewModel.swift */; };
@@ -39,10 +42,13 @@
 		7555FF7B242A565900829871 /* Covid19Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19Radar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F2F3BD4277DC841001413CA /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		9F8184292774D0680052C8A5 /* Dashboard+ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dashboard+ContentView.swift"; sourceTree = "<group>"; };
 		9F8184362774D3660052C8A5 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		9F81843B2774FC630052C8A5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F81843D2774FC640052C8A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F818440277C98120052C8A5 /* DashboardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTileView.swift; sourceTree = "<group>"; };
+		9F8C5FA5277CA64400A47CB7 /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extensions.swift"; sourceTree = "<group>"; };
 		9FF562D62772241F005DCDA7 /* Dashboard+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dashboard+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				9F8184352774D3200052C8A5 /* AppContainer */,
+				9F81843E277C97E90052C8A5 /* Components */,
 				9F8184282774D02F0052C8A5 /* Dashboard */,
+				9F8C5FA4277CA62A00A47CB7 /* Extensions */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				2152FB032600AC8F00CF470E /* Covid19RadarApp.swift */,
@@ -121,6 +129,31 @@
 				9F8184362774D3660052C8A5 /* AppContainer.swift */,
 			);
 			path = AppContainer;
+			sourceTree = "<group>";
+		};
+		9F81843E277C97E90052C8A5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9F81843F277C97F80052C8A5 /* DashboardTile */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9F81843F277C97F80052C8A5 /* DashboardTile */ = {
+			isa = PBXGroup;
+			children = (
+				9F818440277C98120052C8A5 /* DashboardTileView.swift */,
+			);
+			path = DashboardTile;
+			sourceTree = "<group>";
+		};
+		9F8C5FA4277CA62A00A47CB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F8C5FA5277CA64400A47CB7 /* UITabBar+Extensions.swift */,
+				9F2F3BD4277DC841001413CA /* Double+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2F3BD5277DC841001413CA /* Double+Extensions.swift in Sources */,
 				2152FB042600AC8F00CF470E /* Covid19RadarApp.swift in Sources */,
 				7555FF83242A565900829871 /* Dashboard.swift in Sources */,
 				9F8184372774D3660052C8A5 /* AppContainer.swift in Sources */,
+				9F818441277C98120052C8A5 /* DashboardTileView.swift in Sources */,
+				9F8C5FA6277CA64400A47CB7 /* UITabBar+Extensions.swift in Sources */,
 				9FF562D72772241F005DCDA7 /* Dashboard+ViewModel.swift in Sources */,
 				9F81842A2774D0680052C8A5 /* Dashboard+ContentView.swift in Sources */,
 			);

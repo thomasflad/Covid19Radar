@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity(), AndroidScopeComponent {
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
-                    viewModel.cases.collectLatest {
-                        binding.cases = it.toString()
+                    viewModel.weekIncidence.collectLatest {
+                        binding.weekIncidence = it.toString()
                     }
                 }
             }

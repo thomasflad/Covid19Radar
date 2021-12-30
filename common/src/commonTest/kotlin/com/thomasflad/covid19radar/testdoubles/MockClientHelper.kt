@@ -6,11 +6,11 @@ import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.plugins.ContentNegotiation
 import io.ktor.http.ContentType.Application
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -43,13 +43,12 @@ class MockClientHelper {
 }
 
 internal fun createTestHttpClient(clientEngine: HttpClientEngine) = HttpClient(clientEngine) {
-    install(JsonFeature) {
-        serializer = KotlinxSerializer(
-            Json {
-                isLenient = true
-                ignoreUnknownKeys = true
-            }
-        )
+    install(ContentNegotiation) {
+        val json = Json {
+            isLenient = true
+            ignoreUnknownKeys = true
+        }
+        json(json)
     }
 }
 

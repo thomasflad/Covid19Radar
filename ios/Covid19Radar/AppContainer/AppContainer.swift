@@ -1,24 +1,19 @@
-//
-//  AppContainer.swift
-//  Covid19Radar
-//
-//  Created by Thomas Flad on 23.12.21.
-//  Copyright © 2021 orgName. All rights reserved.
-//
-
+import UIKit
 import SwiftUI
 
 struct AppContainer: View {
+
     var body: some View {
         TabView {
             NavigationView {
                 Dashboard()
-                    .navigationTitle("dashboard_navigationbar_title")
+                    .navigationTitle("dashboard.navigationbar.title")
             }
             .tabItem {
-                Label("global_tab_dashboard", systemImage: "list.dash")
+                Label("global.tab.dashboard", systemImage: "allergens")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

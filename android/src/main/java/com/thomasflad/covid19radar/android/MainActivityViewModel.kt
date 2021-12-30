@@ -13,7 +13,7 @@ class Inputs {
 }
 
 interface Outputs {
-    val cases: Flow<Double>
+    val weekIncidence: Flow<Double>
 }
 
 interface MainActivityViewModelType {
@@ -28,10 +28,10 @@ class MainActivityViewModel(
     override val inputs: Inputs = Inputs()
     override val outputs: Outputs = this
 
-    private val getGermany = getGermanyUseCase.dataFlow
+    private val getGermany = getGermanyUseCase.dataFlow()
         .stateIn(viewModelScope, WhileSubscribed(5000), DataState.initial())
 
-    override val cases = getGermany
-        .mapNotNull { it.data?.cases }
+    override val weekIncidence = getGermany
+        .mapNotNull { it.data?.weekIncidence }
 
 }
